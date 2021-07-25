@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>Frontend Mentor | Room homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        } -->
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+
+            <input type="checkbox" name="menu" id="menu">
+            <label for="menu">
+            <img src="./images/icon-hamburger.svg" alt="Open Menu">
+            <img src="./images/icon-close.svg" alt="Close Menu">
+            </label>
+
+            <div class="logo">
+                <img src="./images/logo.svg" alt="Room Logo">
+            </div>
+            <ul>
+                <li>
+                    <a href="#">home</a>
+                </li>
+                <li>
+                    <a href="#">shop</a>
+                </li>
+                <li>
+                    <a href="#">about</a>
+                </li>
+                <li>
+                    <a href="#">contact</a>
+                </li>
+            </ul>
+            <div class="header__overlay"></div>
+        </nav>
+        <div class="header__image-slider">
+            <figure>
+                <img alt="First image" srcset="./images/mobile-image-hero-1.jpg 480w, ./images/desktop-image-hero-1.jpg 1000w" sizes="(max-width: 900px) 55vw, 669px" src="./images/desktop-image-hero-1.jpg">
+            </figure>
+        </div>
+        <div class="header__content">
+            <h1>Discover innovative ways to decorate</h1>
+            <p>
+                We provide unmatched quality, comfort and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you
+                and what you love.
+            </p>
+
+            <a href="#">SHOP NOW! 
+              <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z" fill="#000" fill-rule="nonzero"/></svg>
+            </a>
+        </div>
+        <div class="header__image-controls">
+            <a href="#">
+                <img src="./images/icon-angle-left.svg" alt="Back">
+            </a>
+
+            <a href="#">
+                <img src="./images/icon-angle-right.svg" alt="Next">
+            </a>
+        </div>
+    </header>
+
+    <section class="section">
+        <figure>
+            <img src="./images/image-about-dark.jpg" alt="dark image">
+        </figure>
+
+        <div class="section__content">
+            <h2>About Our Furniture</h2>
+            <p>
+                Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need from traditional to contemporary
+                styles or anything in between. Product specialists are available to help you create your dream space.
+            </p>
+        </div>
+
+        <figure>
+            <img src="./images/image-about-light.jpg" alt="image 1">
+        </figure>
+    </section>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
+    </div>
+    <div class="overlay"></div>
+</body>
+
+</html>

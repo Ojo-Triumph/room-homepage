@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: hsl(0, 0%, 27%);
+    color: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    //font-size: 12px; I'm omitting this requirement to favor a better look
+    display: grid;
+    grid-template-columns: .07fr repeat(3, 1fr) .07fr;
+    @media (max-width: 480px) {
+        font-size: .9rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.header {
+    grid-column: 2/span 3;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr) .3fr;
+    margin-top: 2rem;
+    @media (max-width: 480px) {
+        grid-template-rows: 1fr;
+        margin-top: 0;
+        grid-column: 1/-1;
+    }
+    &>* {
+        height: 100%;
+    }
+    &__nav {
+        grid-column: 1/ span 3;
+        grid-row: 1/ span 1;
+        z-index: 2;
+        padding: 2rem 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        align-self: start;
+        height: max-content;
+        @media (max-width: 480px) {
+            grid-column: 1/-1;
+        }
+        &>* {
+            align-self: start;
+        }
+        ul {
+            grid-column: 3/-1;
+            grid-row: 1/-1;
+            padding: 0 .5rem;
+            display: flex;
+            justify-content: space-between;
+            margin-top: .1rem;
+            @media (max-width: 480px) {
+                width: 100%;
+                z-index: 3;
+                display: none;
+                grid-column: 2/-1;
+            }
+            li {
+                display: inline-block;
+                cursor: pointer;
+                position: relative;
+                &:not(:last-of-type) {
+                    margin-right: 2rem;
+                }
+                a {
+                    color: hsl(0, 0%, 100%);
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -.2rem;
+                    left: 0;
+                    background-color: hsl(0, 0%, 100%);
+                    width: 100%;
+                    height: 2px;
+                    transform: scale(0);
+                    transform-origin: right;
+                    transition: transform .3s;
+                }
+                &:hover {
+                    &::after {
+                        transform: scale(1);
+                    }
+                }
+                @media (max-width: 480px) {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+        input {
+            display: none;
+            border: 2px solid green;
+            &:checked~ul {
+                display: flex;
+                justify-content: center;
+                li {
+                    a {
+                        color: #000;
+                    }
+                }
+            }
+            &:checked~label {
+                img {
+                    &:first-of-type {
+                        display: none;
+                    }
+                    &:last-of-type {
+                        display: block;
+                    }
+                }
+            }
+            &:checked~.logo {
+                display: none;
+            }
+            &:checked~.header__overlay {
+                background: white;
+                grid-column: 1/-1;
+                grid-row: 1/-1;
+                width: 100%;
+                height: 400%;
+                position: relative;
+                top: -2rem;
+                z-index: -3;
+            }
+        }
+        label {
+            grid-column: 1/ span 1;
+            grid-row: 1/-1;
+            justify-self: start;
+            display: none;
+            img {
+                &:last-of-type {
+                    display: none;
+                }
+            }
+            @media (max-width: 480px) {
+                display: flex;
+                padding: 0 2rem;
+            }
+        }
+        .logo {
+            margin-top: .2rem;
+            margin-left: 2rem;
+            grid-row: 1/-1;
+        }
+    }
+    &__image {
+        &-controls {
+            background-color: hsl(0, 0%, 0%);
+            grid-column: 5/ -1;
+            grid-row: 1/ -1;
+            justify-self: start;
+            align-self: end;
+            height: max-content;
+            display: flex;
+            @media (max-width: 480px) {
+                grid-column: 1/-1;
+                justify-self: end;
+            }
+            a {
+                padding: 1rem 2rem;
+                img {
+                    color: hsl(0, 0%, 100%);
+                }
+                &:hover {
+                    background-color: hsl(0, 0%, 27%);
+                }
+            }
+        }
+        &-slider {
+            grid-column: 1/ span 4;
+            grid-row: 1/-1;
+            @media (max-width: 480px) {
+                grid-column: 1/ -1;
+                grid-row: 1/ span 2;
+            }
+            figure {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    &__content {
+        grid-column: 5/ -1;
+        grid-row: 1/ span 2;
+        padding: 3rem 4rem;
+        z-index: 1;
+        @media (max-width: 480px) {
+            padding: 5rem 3rem;
+        }
+        @media (max-width: 480px) {
+            grid-column: 1/ -1;
+            grid-row: 3/ span 1;
+        }
+        h1 {
+            font-weight: 800;
+        }
+        p {
+            font-weight: 500;
+            margin-top: 2.5rem;
+            line-height: 1.5;
+            color: hsl(0, 0%, 63%);
+            margin-bottom: 2rem;
+        }
+        a {
+            color: hsl(0, 0%, 27%);
+            text-decoration: none;
+            letter-spacing: 6px;
+            transition: all .3s;
+            svg {
+                margin-left: 3rem;
+                fill: currentColor;
+            }
+            &:hover {
+                color: hsl(0, 0%, 63%);
+                path {
+                    fill: currentColor;
+                }
+            }
+        }
+    }
+}
+
+//SECTIONS
+.section {
+    grid-column: 2/span 3;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr 1fr;
+    height: max-content;
+    margin: 3rem 0;
+    @media (max-width: 480px) {
+        grid-column: 1/-1;
+    }
+    figure {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        @media (max-width: 480px) {
+            grid-column: 1/-1;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__content {
+        padding: 4rem 2rem;
+        justify-self: center;
+        align-self: center;
+        color: hsl(0, 0%, 63%);
+        @media (max-width: 480px) {
+            grid-column: 1/-1;
+            padding: 5rem 3rem;
+        }
+        h2 {
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: hsl(0, 0%, 0%);
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+        p {
+            line-height: 1.5;
+            font-weight: 500;
+        }
+    }
+}
+
+.attribution {
+    grid-column: 2/span 3;
+}
