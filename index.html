@@ -58,7 +58,9 @@
         </nav>
         <div class="header__image-slider">
             <figure>
-                <img alt="First image" srcset="./images/mobile-image-hero-1.jpg 480w, ./images/desktop-image-hero-1.jpg 1000w" sizes="(max-width: 900px) 55vw, 669px" src="./images/desktop-image-hero-1.jpg">
+                <img alt="First image" srcset="./images/mobile-image-hero-1.jpg 480w, ./images/desktop-image-hero-1.jpg 1000w" sizes="(max-width: 900px) 55vw, 669px" src="./images/desktop-image-hero-1.jpg" class="active">
+                <img alt="Second image" srcset="./images/mobile-image-hero-2.jpg 480w, ./images/desktop-image-hero-2.jpg 1000w" sizes="(max-width: 900px) 55vw, 669px" src="./images/desktop-image-hero-2.jpg">
+                <img alt="Third image" srcset="./images/mobile-image-hero-2.jpg 480w, ./images/desktop-image-hero-3.jpg 1000w" sizes="(max-width: 900px) 55vw, 669px" src="./images/desktop-image-hero-3.jpg">
             </figure>
         </div>
         <div class="header__content">
@@ -73,11 +75,11 @@
             </a>
         </div>
         <div class="header__image-controls">
-            <a href="#">
+            <a href="#" id="Previous">
                 <img src="./images/icon-angle-left.svg" alt="Back">
             </a>
 
-            <a href="#">
+            <a href="#" id="Next">
                 <img src="./images/icon-angle-right.svg" alt="Next">
             </a>
         </div>
@@ -104,6 +106,9 @@
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
     </div>
     <div class="overlay"></div>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
