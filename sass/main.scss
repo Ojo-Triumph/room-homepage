@@ -177,9 +177,12 @@
                 }
             }
             .logo {
-                // margin-top: .2rem;
+                margin-top: -2rem;
                 margin-left: 2rem;
                 grid-row: 1/-1;
+                @media (max-width: 1028px) {
+                    margin-top: -.2rem;
+                }
             }
         }
         &__image {
