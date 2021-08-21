@@ -65,6 +65,11 @@
                 justify-self: start;
                 width: 100%;
             }
+            @media (max-width: 768px) {
+                grid-column: 1/-1;
+                justify-self: start;
+                width: 100%;
+            }
             &>* {
                 align-self: start;
             }
@@ -123,7 +128,7 @@
                 border: 2px solid green;
                 &:checked~ul {
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-evenly;
                     li {
                         a {
                             color: #000;
