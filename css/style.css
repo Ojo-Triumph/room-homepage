@@ -148,7 +148,7 @@ body {
       grid-row: 1/-1; }
       @media (max-width: 1028px) {
         .header__nav .logo {
-          margin-top: -.2rem; } }
+          margin-top: -.1rem; } }
       @media (max-width: 480px) {
         .header__nav .logo {
           margin-top: .2rem; } }
