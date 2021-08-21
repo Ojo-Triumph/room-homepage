@@ -14,7 +14,8 @@
         //font-size: 12px; I'm omitting this requirement to favor a better look
         display: grid;
         grid-template-columns: .07fr repeat(3, 1fr) .07fr;
-        @media (max-width: 480px) {
+        width: 100%;
+        @media (max-width: 768px) {
             font-size: .8rem;
             grid-template-columns: repeat(3, 1fr);
         }
@@ -26,8 +27,13 @@
         grid-template-columns: repeat(7, 1fr);
         grid-template-rows: repeat(2, 1fr) .3fr;
         margin-top: 2rem;
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             grid-template-rows: 82vw;
+            margin-top: 0;
+            grid-column: 1/-1;
+        }
+        @media (max-width: 480px) {
+            grid-template-rows: 102vw;
             margin-top: 0;
             grid-column: 1/-1;
         }
@@ -44,8 +50,20 @@
             grid-template-columns: repeat(7, 1fr);
             align-self: start;
             height: max-content;
-            @media (max-width: 480px) {
+            @media (max-width: 1024px) {
+                grid-column: 1/ -1;
+                justify-self: center;
+                width: max-content;
+            }
+            @media (max-width: 768px) {
                 grid-column: 1/-1;
+                justify-self: start;
+                width: max-content;
+            }
+            @media (max-width: 658px) {
+                grid-column: 1/span 1;
+                justify-self: start;
+                width: 100%;
             }
             &>* {
                 align-self: start;
@@ -57,7 +75,7 @@
                 display: flex;
                 justify-content: space-between;
                 margin-top: .1rem;
-                @media (max-width: 480px) {
+                @media (max-width: 768px) {
                     width: 100%;
                     z-index: 3;
                     display: none;
@@ -92,7 +110,7 @@
                             transform: scale(1);
                         }
                     }
-                    @media (max-width: 480px) {
+                    @media (max-width: 768px) {
                         font-size: .9rem;
                         &:not(:last-of-type) {
                             margin-right: 1.3rem;
@@ -146,7 +164,7 @@
                         display: none;
                     }
                 }
-                @media (max-width: 480px) {
+                @media (max-width: 768px) {
                     display: flex;
                     padding: 0 2rem;
                 }
@@ -167,14 +185,16 @@
                 height: max-content;
                 display: flex;
                 z-index: 22;
-                @media (max-width: 480px) {
-                    grid-column: 1/-1;
+                @media (max-width: 1024px) {
                     justify-self: end;
+                }
+                @media (max-width: 768px) {
+                    grid-column: 1/-1;
                 }
                 a {
                     padding: 1rem 2rem;
-                    @media (max-width: 480px) {
-                        padding: .6rem 1rem;
+                    @media (max-width: 768px) {
+                        padding: 1rem 1.5rem;
                     }
                     img {
                         color: hsl(0, 0%, 100%);
@@ -187,29 +207,34 @@
             &-slider {
                 grid-column: 1/ span 4;
                 grid-row: 1/-1;
-                @media (max-width: 480px) {
+                overflow: hidden;
+                @media (max-width: 1024px) {
                     grid-column: 1/ -1;
-                    grid-row: 1/ span 2;
                 }
-                figure {
-                    overflow: hidden;
+                .carousel {
                     position: relative;
-                    object-fit: cover;
-                    width: 100%;
+                    right: 0;
                     height: 100%;
-                    display: flex;
-                    img {
-                        position: absolute;
-                        top: 0;
-                        right: -100%;
-                        width: 100%;
+                    overflow: hidden;
+                    display: inline-flex;
+                    width: 300%;
+                    transition: all .5s;
+                    figure {
                         height: 100%;
-                        transition: all .2s;
-                        &.active {
-                            z-index: 20;
+                        object-fit: cover;
+                        width: 100%;
+                        img {
+                            position: relative;
+                            top: 0;
                             right: 0;
+                            width: 100%;
+                            height: 100%;
                         }
                     }
+                }
+                @media (max-width: 768px) {
+                    grid-column: 1/ -1;
+                    grid-row: 1/ span 2;
                 }
             }
         }
@@ -218,7 +243,11 @@
             grid-row: 1/ span 2;
             padding: 3rem 4rem;
             z-index: 1;
-            @media (max-width: 480px) {
+            @media (max-width: 1024px) {
+                grid-column: 1/ -1;
+                grid-row: 4/span 1;
+            }
+            @media (max-width: 768px) {
                 padding: 2rem 1.7rem;
                 grid-column: 1/ -1;
                 grid-row: 3/ span 1;
@@ -233,7 +262,7 @@
                 line-height: 1.5;
                 color: hsl(0, 0%, 63%);
                 margin-bottom: 2rem;
-                @media (max-width: 480px) {
+                @media (max-width: 768px) {
                     margin-top: 1rem;
                 }
             }
@@ -263,14 +292,14 @@
         grid-template-columns: 1fr 1.8fr 1fr;
         height: max-content;
         margin: 3rem 0;
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             grid-column: 1/-1;
         }
         figure {
             object-fit: cover;
             width: 100%;
             height: 100%;
-            @media (max-width: 480px) {
+            @media (max-width: 768px) {
                 grid-column: 1/-1;
             }
             img {
@@ -283,7 +312,7 @@
             justify-self: center;
             align-self: center;
             color: hsl(0, 0%, 63%);
-            @media (max-width: 480px) {
+            @media (max-width: 768px) {
                 grid-column: 1/-1;
                 padding: 2rem 1.7rem;
             }
