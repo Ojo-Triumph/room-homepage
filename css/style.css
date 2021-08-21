@@ -73,7 +73,9 @@ body {
       padding: 0 .5rem;
       display: flex;
       justify-content: space-between;
-      margin-top: .1rem; }
+      margin-top: .1rem;
+      align-items: center;
+      align-self: center; }
       @media (max-width: 768px) {
         .header__nav ul {
           width: 100%;
@@ -246,6 +248,9 @@ body {
   margin: 3rem 0; }
   @media (max-width: 768px) {
     .section {
+      grid-column: 1/-1; } }
+  @media (max-width: 900px) {
+    .section > * {
       grid-column: 1/-1; } }
   .section figure {
     object-fit: cover;
